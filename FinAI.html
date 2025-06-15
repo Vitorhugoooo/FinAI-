@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinAI - Dashboard Financeiro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="py-3 mb-4 border-bottom">
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <h1 class="mb-0">
+                    <i class="fas fa-wallet text-primary me-2"></i>
+                    FinAI
+                </h1>
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown">
+                        <i class="fas fa-user-circle me-1"></i>
+                        Minha Conta
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Perfil</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Configurações</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 rounded">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#"><i class="fas fa-home me-1"></i> Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-exchange-alt me-1"></i> Transações</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-chart-pie me-1"></i> Orçamentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-bullseye me-1"></i> Metas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-file-alt me-1"></i> Relatórios</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus me-1"></i> Nova Transação
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card summary-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Saldo Atual</h5>
+                        <p class="card-value text-success">R$ 5.432,10</p>
+                        <p class="card-text"><small class="text-muted">+2% desde o mês passado</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card summary-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Receitas</h5>
+                        <p class="card-value text-primary">R$ 8.500,00</p>
+                        <p class="card-text"><small class="text-muted">Mensal</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card summary-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Despesas</h5>
+                        <p class="card-value text-danger">R$ 3.067,90</p>
+                        <p class="card-text"><small class="text-muted">Mensal</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card summary-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Investimentos</h5>
+                        <p class="card-value text-info">R$ 1.200,00</p>
+                        <p class="card-text"><small class="text-muted">Total acumulado</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mb-4">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Gastos por Categoria</h5>
+                        <select class="form-select form-select-sm" style="width: auto;">
+                            <option>Últimos 30 dias</option>
+                            <option>Este mês</option>
+                            <option>Mês passado</option>
+                        </select>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <div class="category-item">
+                                <div class="category-label">Moradia</div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 45%">R$ 1.300,00</div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-label">Alimentação</div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 30%">R$ 850,00</div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-label">Transporte</div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 25%">R$ 700,00</div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-label">Lazer</div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 15%">R$ 400,00</div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-label">Educação</div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 10%">R$ 300,00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Insights do FinAI</h5>
+                    </div>
+                    <div class="card-body insights-container">
+                        <div class="insight-item">
+                            <div class="insight-icon">
+                                <i class="fas fa-lightbulb text-warning"></i>
+                            </div>
+                            <div class="insight-text">
+                                Você economizou 12% a mais este mês em comparação com o mês passado
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">
+                                <i class="fas fa-exclamation-triangle text-danger"></i>
+                            </div>
+                            <div class="insight-text">
+                                Suas despesas com lazer aumentaram 20% este mês
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">
+                                <i class="fas fa-coins text-success"></i>
+                            </div>
+                            <div class="insight-text">
+                                Você pode economizar R$ 150/mês cancelando assinaturas não utilizadas
+                            </div>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">
+                                <i class="fas fa-chart-line text-primary"></i>
+                            </div>
+                            <div class="insight-text">
+                                35% das suas despesas são com moradia, dentro da média recomendada
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Últimas Transações</h5>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Ver todas</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Descrição</th>
+                                        <th>Categoria</th>
+                                        <th>Valor</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10/05</td>
+                                        <td>Supermercado</td>
+                                        <td>Alimentação</td>
+                                        <td class="text-danger">-R$ 145,50</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-secondary">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>09/05</td>
+                                        <td>Salário</td>
+                                        <td>Receita</td>
+                                        <td class="text-success">+R$ 5.000,00</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-secondary">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>08/05</td>
+                                        <td>Aluguel</td>
+                                        <td>Moradia</td>
+                                        <td class="text-danger">-R$ 1.300,00</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-secondary">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>07/05</td>
+                                        <td>Academia</td>
+                                        <td>Saúde</td>
+                                        <td class="text-danger">-R$ 120,00</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-secondary">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>05/05</td>
+                                        <td>Cinema</td>
+                                        <td>Lazer</td>
+                                        <td class="text-danger">-R$ 45,00</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-secondary">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

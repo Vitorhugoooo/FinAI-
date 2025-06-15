@@ -1,0 +1,106 @@
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* Cabeçalho personalizado */
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+/* Cards de resumo */
+.summary-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.05);
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+/* Gráfico de categorias */
+.chart-container {
+    padding: 15px 0;
+}
+
+.category-item {
+    margin-bottom: 20px;
+}
+
+.category-label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.progress {
+    height: 30px;
+    border-radius: 15px;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 15px;
+}
+
+/* Insights */
+.insights-container {
+    padding: 0;
+}
+
+.insight-item {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    align-items: flex-start;
+}
+
+.insight-item:last-child {
+    border-bottom: none;
+}
+
+.insight-icon {
+    font-size: 1.2rem;
+    margin-right: 12px;
+    margin-top: 2px;
+}
+
+.insight-text {
+    flex: 1;
+}
+
+/* Tabela de transações */
+.table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th {
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-value {
+        font-size: 1.5rem;
+    }
+    
+    .progress-bar {
+        font-size: 0.8rem;
+        padding-left: 8px;
+    }
+}
